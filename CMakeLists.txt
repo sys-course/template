@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(demo3 VERSION 0.1.0)
+project(demo VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
 
-add_executable(demo3 main.c)
+add_executable(demo main.c)
+add_test(test-demo demo)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
