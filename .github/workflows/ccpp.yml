@@ -12,6 +12,6 @@ jobs:
     - name: mkdir
       run: mkdir -p build && cd build
     - name: build
-      run: cmake -G 'Unix Makefiles' .. && make
+      run: cd build && cmake -G 'Unix Makefiles' .. && make
     - name: test
-      run: ctest
+      run: cd build && ctest
