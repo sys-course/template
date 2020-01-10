@@ -9,9 +9,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: mkdir
-      run: mkdir -p build && cd build
+    - name: configure
+      run: cmake -Bbuild -G 'Unix Makefiles'
     - name: build
-      run: cd build && cmake -G 'Unix Makefiles' .. && make
+      run: cmake --build build
     - name: test
       run: cd build && ctest
